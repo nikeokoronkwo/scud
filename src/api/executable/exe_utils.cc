@@ -3,7 +3,7 @@
 #include "src/api/executable/exe_funcs.h"
 #include "src/api/shared/shared_utils.h"
 
-namespace scud {
+namespace scud::api::internal {
 std::string build_cc_executable(ScudExecutable lib) {
   // The output of the function as a string
   std::string output;
@@ -12,7 +12,7 @@ std::string build_cc_executable(ScudExecutable lib) {
   std::string compiler = set_compiler_from_lang(lib.lang, lib.defines);
 
   // Set the output flag for the command
-  std::string out = "-o " + lib.name + exe_extension(currentPlatform());
+  std::string out = "-o " + lib.name + exe_extension(shared::currentPlatform());
 
   // Merge the sources as a single string
   std::string sources = merge_vec(lib.src, " ");

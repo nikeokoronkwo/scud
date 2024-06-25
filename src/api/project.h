@@ -4,13 +4,19 @@
 #include <vector>
 #include "src/api/base/base.h"
 
-struct ScudProject {
-  std::string name;
-  ScudDefines defines;
+namespace scud {
+  namespace api {
+    struct ScudProject {
+      std::string name;
+      ScudDefines defines;
 
-  std::vector<ScudTarget> targets;
+      std::vector<ScudTarget> targets;
 
-  std::vector<std::string> make();
-};
+      std::vector<std::string> make();
+    };
+  }
+}
+
+
 
 #endif

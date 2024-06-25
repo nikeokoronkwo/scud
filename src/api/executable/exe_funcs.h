@@ -5,6 +5,12 @@
 
 #include "src/api/shared/scud_platform.h"
 
-std::string exe_extension(ScudPlatform platform);
+namespace scud {
+  namespace api {
+    namespace internal {
+std::string exe_extension(shared::ScudPlatform platform);
+    }
+  }
+}
 
 #endif

@@ -8,6 +8,8 @@
 #include "src/api/shared/shared_utils.h"
 
 namespace scud {
+   namespace api {
+        namespace internal {
 /**
  * Writes make command code for building a `ScudLibrary` object
  */
@@ -20,7 +22,7 @@ std::string build_cc_library(ScudLibrary lib) {
 
   // Set the output flag for the command
   std::string out =
-      "-o " + lib.name + lib_extension(lib.type, currentPlatform());
+      "-o " + lib.name + lib_extension(lib.type, shared::currentPlatform());
 
   // Merge the sources as a single string
   std::string sources = merge_vec(lib.src, " ");
@@ -54,7 +56,7 @@ std::string build_cc_library(ScudLibrary lib) {
     command_parts.push_back(
         "\n\t" +
         (lib.defines.count("ARCHIVER") ? lib.defines["ARCHIVER"] : "ar") +
-        " rcs " + (lib.name + lib_extension(lib.type, currentPlatform())) +
+        " rcs " + (lib.name + lib_extension(lib.type, shared::currentPlatform())) +
         " " + (static_lib_name + ".o"));
   }
 
@@ -63,3 +65,5 @@ std::string build_cc_library(ScudLibrary lib) {
   return output;
 }
 }  // namespace scud
+   }
+}

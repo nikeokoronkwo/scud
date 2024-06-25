@@ -8,6 +8,9 @@
 #include "src/api/base/base.h"
 #include "src/api/library/lib_base.h"
 
+namespace scud {
+  namespace api {
+
 struct ScudLibrary: public ScudBasicTarget<ScudLibrary> {
     std::string name;
     ScudLanguage lang;
@@ -22,5 +25,7 @@ struct ScudLibrary: public ScudBasicTarget<ScudLibrary> {
 
     std::string make() override;
 };
+  }
+}
 
 #endif

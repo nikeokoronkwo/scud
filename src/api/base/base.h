@@ -4,6 +4,9 @@
 #include <string>
 #include <map>
 
+namespace scud {
+    namespace api {
+
 // A base enum for the different kinds of languages supported by Scud
 enum ScudLanguage { 
     rust, 
@@ -47,10 +50,13 @@ struct ScudBasicTarget: public ScudTarget {
 };
 
 
+    // Parses the given language as a string of type `std::string` and returns a `ScudLanguage` type
+    //
+    // Used for conversion between the given types
+    ScudLanguage parse_lang(std::string lang);
 
-// Parses the given language as a string of type `std::string` and returns a `ScudLanguage` type
-//
-// Used for conversion between the given types
-ScudLanguage parse_lang(std::string lang);
+    }
+}
+
 
 #endif

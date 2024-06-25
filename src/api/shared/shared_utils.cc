@@ -7,6 +7,11 @@
 
 #include "src/api/library/lib.h"
 
+
+namespace scud {
+  namespace api {
+    namespace internal {
+
 std::string set_compiler_from_lang(ScudLanguage lang, ScudDefines defines) {
   switch (lang) {
     case rust:
@@ -46,4 +51,7 @@ std::string merge_vec(std::vector<std::string> vec, std::string separator,
     if (i + 1 != vec.size()) s += separator;
   }
   return s;
+}
+    }
+  }
 }

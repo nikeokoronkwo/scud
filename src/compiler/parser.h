@@ -9,6 +9,8 @@
 
 #include "src/compiler/lexer.h"
 
+namespace scud {
+
 class Visitor;
 
 namespace ast {
@@ -156,5 +158,7 @@ public:
   virtual void visit_parameter_expr(ast::ParameterExpr& expr) = 0;
   virtual void visit_function_expr(ast::FunctionExpr& expr) = 0;
 };
+
+}
 
 #endif

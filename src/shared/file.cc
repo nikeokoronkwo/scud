@@ -3,6 +3,10 @@
 #include <iostream>
 #include <vector>
 
+namespace scud {
+	namespace __utils {
+
+
 std::string read_file(std::string &dest, const char* const filename) {
     std::ifstream ifile(filename, std::ios::ate | std::ios::binary);
     if (ifile.is_open()) {
@@ -43,4 +47,7 @@ std::vector<std::string> read_file_lines(std::vector<std::string> &dest, const c
 	std::cerr << "Unable to find file:" << filename << ".\nPlease check if the file exists in the given directory" << std::endl; 
     }
     return std::vector<std::string>();
+}
+
+}
 }

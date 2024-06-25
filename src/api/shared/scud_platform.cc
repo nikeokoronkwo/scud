@@ -2,6 +2,10 @@
 
 #include "library/lib_base.h"
 
+namespace scud {
+  namespace api {
+    namespace shared {
+
 const ScudPlatform currentPlatform() {
 #if defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__)
   return Windows;
@@ -11,4 +15,7 @@ const ScudPlatform currentPlatform() {
   return Linux;
 #endif
   return Linux;
+}
+    }
+  }
 }

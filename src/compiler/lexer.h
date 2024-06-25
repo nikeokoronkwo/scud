@@ -4,7 +4,8 @@
 #include <string>
 #include <vector>
 
-// Representation class for a single token 
+namespace scud {
+    // Representation class for a single token 
 class Token {
 public:
     // Enum to represent the given types of tokens, with the underlying type of `unsigned int`
@@ -91,5 +92,7 @@ public:
     // Function to convert raw source to a list of tokens via lexing
     std::vector<Token> scan_tokens();
 };
+}
+
 
 #endif

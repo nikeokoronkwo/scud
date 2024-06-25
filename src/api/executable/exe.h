@@ -9,16 +9,20 @@
 
 // TODO: Add scud namespace
 
-struct ScudExecutable: public ScudBasicTarget<ScudLibrary> {
-    std::string name;
-    ScudLanguage lang;
-    std::vector<std::string> src;
-    std::vector<ScudInclude> include;
-    std::vector<ScudLibrary> libraries;
-    ScudDefines defines;
-    std::vector<std::string> flags;
+namespace scud::api {
+    struct ScudExecutable: public ScudBasicTarget<ScudLibrary> {
+        std::string name;
+        ScudLanguage lang;
+        std::vector<std::string> src;
+        std::vector<ScudInclude> include;
+        std::vector<ScudLibrary> libraries;
+        ScudDefines defines;
+        std::vector<std::string> flags;
 
-    std::string make() override;
-};
+        std::string make() override;
+    };
+}
+
+
 
 #endif

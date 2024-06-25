@@ -8,20 +8,22 @@
 #include "src/api/shared/scud_platform.h"
 #include "src/api/shared/shared_utils.h"
 
-std::string build_command_from_lib(ScudLibrary lib) {
+
+namespace scud::api::__internal {
+  std::string build_command_from_lib(ScudLibrary lib) {
   switch (lib.lang) {
     case c:
     case cpp:
-      return scud::build_cc_library(lib);
+      return internal::build_cc_library(lib);
     default:
-      return set_compiler_from_lang(lib.lang) + merge_vec(lib.src, " ") +
+      return internal::set_compiler_from_lang(lib.lang) + internal::merge_vec(lib.src, " ") +
              "-o " + lib.name;
   }
 }
 
 std::string make_library(ScudLibrary lib) {
   // get target name
-  std::string target = lib.name + lib_extension(lib.type, currentPlatform());
+  std::string target = lib.name + internal::lib_extension(lib.type, shared::currentPlatform());
 
   // get required items
   std::vector<std::string> require = lib.src;
@@ -32,7 +34,13 @@ std::string make_library(ScudLibrary lib) {
   std::string command = build_command_from_lib(lib);
 
   // Combine and return
-  return target + ": " + merge_vec(require, " ") + "\n\t" + command + "\n";
+  return target + ": " + internal::merge_vec(require, " ") + "\n\t" + command + "\n";
 }  
+}
 
-std::string ScudLibrary::make() { return make_library(*this); }
+
+namespace scud {
+  namespace api {
+    std::string ScudLibrary::make() { return __internal::make_library(*this); }
+  }
+}

@@ -5,6 +5,7 @@
 // Check whether a given character is a whitespace or not
 inline bool isWhitespace(char c) { return c == ' ' || c == '\t' || c == '\f' || c == '\v' || c == '\r' || c == '\n';}
 
+namespace scud {
 // Simple method to convert a `TokenKind` to a representable string, for debugging purposes
 std::string Token::stringify_token_kind(TokenKind kind) const {
     switch (kind) {
@@ -104,3 +105,4 @@ std::vector<Token> Lexer::scan_tokens() {
     return tokens;
 }
 
+}

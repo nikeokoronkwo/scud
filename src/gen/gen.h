@@ -2,9 +2,10 @@
 #define SCUD_SRC_GEN_GEN_H_
 
 #include "src/compiler/parser.h"
-#include "src/"
 
+namespace scud {
 class ProgramVisitor: public Visitor {
+
 public:
   void visit(ast::AST& ast) override;
   void visit_expr(ast::Expr& expr) override;
@@ -16,4 +17,5 @@ public:
   void visit_function_expr(ast::FunctionExpr& expr) override;
 };
 
+}
 #endif

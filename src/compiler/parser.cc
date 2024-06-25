@@ -7,6 +7,8 @@
 #include "lexer.h"
 #include "parser.h"
 
+namespace scud {
+
 namespace ast {
     void Expr::accept(Visitor& visitor) { return visitor.visit_expr(*this); }
 
@@ -170,3 +172,4 @@ ast::AST Parser::parse() {
     return ast::AST(expressions);
 }
 
+} // namespace scud

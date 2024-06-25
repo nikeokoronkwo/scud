@@ -3,8 +3,13 @@
 
 // TODO: Add scud namespace
 
-enum ScudLibraryType { Shared, Static, Object };
+namespace scud {
+  namespace api {
+    enum ScudLibraryType { Shared, Static, Object };
 
-enum ScudLibraryScope: bool { Private = true, Public = false };
+    enum ScudLibraryScope: bool { Private = true, Public = false };
+  }
+}
+
 
 #endif

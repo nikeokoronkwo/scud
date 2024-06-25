@@ -2,7 +2,7 @@
 
 #include "scud_ast.h"
 
-using namespace ast;
+using namespace scud::ast;
 
 int main() {
   AST ast = parse(R"(
