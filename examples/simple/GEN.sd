@@ -1,0 +1,7 @@
+project("simple")
+
+executable(
+    "simple",
+    src: ["main.cc"]
+)
+

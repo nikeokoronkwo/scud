@@ -1,0 +1,6 @@
+project("multi-c")
+
+# Making a project with rust
+library("mc", RUST, 
+    src: ["main.rs", "file.rs"]
+)
