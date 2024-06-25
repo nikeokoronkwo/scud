@@ -1,6 +1,6 @@
-#include "scud_platform.h"
+#include "src/api/shared/scud_platform.h"
 
-#include "library/lib_base.h"
+#include "src/api/library/lib_base.h"
 
 namespace scud {
 namespace api {

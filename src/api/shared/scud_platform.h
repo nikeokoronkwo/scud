@@ -1,7 +1,7 @@
 #ifndef SCUD_PLATFORM_H
 #define SCUD_PLATFORM_H
 
-#include "library/lib_base.h"
+#include "src/api/library/lib_base.h"
 
 namespace scud {
 namespace api {

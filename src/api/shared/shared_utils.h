@@ -4,7 +4,7 @@
 #include <string>
 #include <vector>
 
-#include "library/lib_base.h"
+#include "src/api/library/lib_base.h"
 
 namespace scud {
 namespace api {
