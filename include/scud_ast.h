@@ -2,6 +2,7 @@
 #define SCUD_AST_H
 
 #include <string>
+
 #include "src/compiler/parser.h"
 
 scud::ast::AST parse(const char* source);

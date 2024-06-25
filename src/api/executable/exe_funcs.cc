@@ -5,8 +5,8 @@
 #include "src/api/shared/scud_platform.h"
 
 namespace scud {
-  namespace api {
-    namespace internal {
+namespace api {
+namespace internal {
 std::string exe_extension(shared::ScudPlatform platform) {
   switch (platform) {
     case shared::Windows:
@@ -18,6 +18,6 @@ std::string exe_extension(shared::ScudPlatform platform) {
       break;
   }
 }
-    }
-  }
-}
+}  // namespace internal
+}  // namespace api
+}  // namespace scud

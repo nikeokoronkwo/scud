@@ -1,8 +1,8 @@
 #include "src/api/library/lib_funcs.h"
 
 namespace scud {
-  namespace api {
-    namespace internal {
+namespace api {
+namespace internal {
 std::string lib_extension(ScudLibraryType type, shared::ScudPlatform platform) {
   switch (type) {
     case Shared:
@@ -21,6 +21,6 @@ std::string lib_extension(ScudLibraryType type, shared::ScudPlatform platform) {
       return ".o";
   }
 }
-    }
-  }
-}
+}  // namespace internal
+}  // namespace api
+}  // namespace scud

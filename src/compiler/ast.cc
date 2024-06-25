@@ -1,5 +1,4 @@
 #include "include/scud_ast.h"
-
 #include "src/compiler/lexer.h"
 #include "src/compiler/parser.h"
 #include "src/shared/file.h"

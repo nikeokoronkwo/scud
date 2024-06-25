@@ -7,13 +7,11 @@
 #include "src/api/shared/scud_platform.h"
 
 namespace scud {
-  namespace api {
-    namespace internal {
-      std::string lib_extension(ScudLibraryType type, shared::ScudPlatform platform);
-    }
-  }
+namespace api {
+namespace internal {
+std::string lib_extension(ScudLibraryType type, shared::ScudPlatform platform);
 }
-
-
+}  // namespace api
+}  // namespace scud
 
 #endif

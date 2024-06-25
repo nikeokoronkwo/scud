@@ -34,4 +34,4 @@ std::string build_cc_executable(ScudExecutable lib) {
   output += merge_vec(command_parts, " ");
   return output;
 }
-}  // namespace scud
+}  // namespace scud::api::internal

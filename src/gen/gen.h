@@ -4,9 +4,8 @@
 #include "src/compiler/parser.h"
 
 namespace scud {
-class ProgramVisitor: public Visitor {
-
-public:
+class ProgramVisitor : public Visitor {
+ public:
   void visit(ast::AST& ast) override;
   void visit_expr(ast::Expr& expr) override;
   void visit_string_expr(ast::StringExpr& expr) override;
@@ -17,5 +16,5 @@ public:
   void visit_function_expr(ast::FunctionExpr& expr) override;
 };
 
-}
+}  // namespace scud
 #endif
