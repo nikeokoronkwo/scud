@@ -1,0 +1,6 @@
+**/private/
+**/internal/
+**/bin/
+**/build/
+
+Makefile
