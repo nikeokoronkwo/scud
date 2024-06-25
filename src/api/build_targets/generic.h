@@ -8,7 +8,8 @@ struct BuildTarget {
   std::string compiler;
   std::string output;
 
-  BuildTarget(std::string compiler, std::string output = "out"): compiler(compiler), output(output) {}
+  BuildTarget(std::string compiler, std::string output = "out")
+      : compiler(compiler), output(output) {}
 
   virtual std::string make() = 0;
 };

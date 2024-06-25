@@ -1,17 +1,16 @@
 #ifndef SCUD_SRC_GEN_GEN_H_
 #define SCUD_SRC_GEN_GEN_H_
 
-#include "src/compiler/parser.h"
 #include "src/api/project.h"
+#include "src/compiler/parser.h"
 
 namespace scud {
 class ProgramVisitor : public Visitor {
   api::ScudProject project;
-public:
-  ProgramVisitor() {
-    project = {};
-  }
-  
+
+ public:
+  ProgramVisitor() { project = {}; }
+
   void visit(ast::AST& ast) override;
   void visit_expr(ast::Expr& expr) override;
   void visit_string_expr(ast::StringExpr& expr) override;

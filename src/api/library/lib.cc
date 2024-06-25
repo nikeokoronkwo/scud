@@ -1,26 +1,32 @@
 #include "src/api/library/lib.h"
 
+#include <algorithm>
 #include <string>
 #include <vector>
-#include <algorithm>
 
+#include "src/api/build_targets/c.h"
 #include "src/api/library/lib_funcs.h"
 #include "src/api/shared/scud_platform.h"
 #include "src/api/shared/shared_utils.h"
-#include "src/api/build_targets/c.h"
 
 namespace scud::api::__internal {
 std::string build_command_from_lib(ScudLibrary lib) {
-  std::string compiler = internal::set_compiler_from_lang(lib.lang, lib.defines);
+  std::string compiler =
+      internal::set_compiler_from_lang(lib.lang, lib.defines);
 
   switch (lib.lang) {
     case c:
     case cpp: {
       std::vector<std::string> includes;
-      std::transform(lib.include.cbegin(), lib.include.cend(), std::back_inserter(includes), [](ScudInclude& include){ return include.path; });
-      return CLibrary(compiler, lib.type, lib.name, includes, lib.src, (lib.defines.count("ARCHIVER") ? lib.defines["ARCHIVER"] : "ar")).make();
+      std::transform(lib.include.cbegin(), lib.include.cend(),
+                     std::back_inserter(includes),
+                     [](ScudInclude& include) { return include.path; });
+      return CLibrary(compiler, lib.type, lib.name, includes, lib.src,
+                      (lib.defines.count("ARCHIVER") ? lib.defines["ARCHIVER"]
+                                                     : "ar"))
+          .make();
     }
-      
+
     default:
       return internal::set_compiler_from_lang(lib.lang) +
              internal::merge_vec(lib.src, " ") + "-o " + lib.name;
