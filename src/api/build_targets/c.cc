@@ -4,9 +4,7 @@
 #include <vector>
 
 #include "src/api/executable/exe_funcs.h"
-#include "src/api/executable/exe_utils.h"
 #include "src/api/library/lib_funcs.h"
-#include "src/api/library/lib_utils.h"
 #include "src/api/shared/shared_utils.h"
 
 namespace scud::api {

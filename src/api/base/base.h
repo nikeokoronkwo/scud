@@ -25,7 +25,7 @@ struct ScudTarget {
   std::vector<std::string> src;
   ScudDefines defines;
 
-  virtual std::string make() = 0;
+  virtual std::string make(){};
 };
 
 // A basic Scud Target for Generic Targets (`executable`, `library` and other

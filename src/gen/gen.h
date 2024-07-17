@@ -3,10 +3,12 @@
 
 #include "src/api/project.h"
 #include "src/compiler/parser.h"
+#include <map>
 
 namespace scud {
 class ProgramVisitor : public Visitor {
   api::ScudProject project;
+  std::map<std::string, std::string> variables;
 
  public:
   ProgramVisitor() { project = {}; }
