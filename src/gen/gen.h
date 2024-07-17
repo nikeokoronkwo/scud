@@ -1,9 +1,10 @@
 #ifndef SCUD_SRC_GEN_GEN_H_
 #define SCUD_SRC_GEN_GEN_H_
 
+#include <map>
+
 #include "src/api/project.h"
 #include "src/compiler/parser.h"
-#include <map>
 
 namespace scud {
 class ProgramVisitor : public Visitor {

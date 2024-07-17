@@ -5,7 +5,7 @@
 #include "src/compiler/parser.h"
 
 namespace scud::api::internal {
-      ScudProject traverse(ast::AST& scudAst);
-    }
+ScudProject traverse(ast::AST& scudAst);
+}
 
 #endif

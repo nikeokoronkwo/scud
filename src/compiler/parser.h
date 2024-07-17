@@ -14,9 +14,7 @@ class Visitor;
 
 namespace ast {
 
-enum ExprKind {
-  String, List, Identifier, Variable, Parameter, Function
-};
+enum ExprKind { String, List, Identifier, Variable, Parameter, Function };
 
 // base expression class
 class Expr {
@@ -46,8 +44,8 @@ class ListExpr : public Expr {
 
   ListExpr(std::vector<std::unique_ptr<Expr>>& values)
       : values(std::move(values)) {
-        this->kind = ExprKind::List;
-      }
+    this->kind = ExprKind::List;
+  }
   void accept(Visitor& visitor);
 };
 
@@ -70,8 +68,8 @@ class VariableExpr : public Expr {
 
   VariableExpr(std::string name, std::unique_ptr<Expr>& value)
       : name(name), value(std::move(value)) {
-        this->kind = ExprKind::Variable;
-      }
+    this->kind = ExprKind::Variable;
+  }
   void accept(Visitor& visitor);
 };
 
@@ -86,12 +84,12 @@ class ParameterExpr : public Expr {
 
   ParameterExpr(std::unique_ptr<Expr>& value, std::unique_ptr<Expr>& _name)
       : value(std::move(value)), named(true), name(std::move(_name)) {
-        this->kind = ExprKind::Parameter;
-      }
+    this->kind = ExprKind::Parameter;
+  }
   ParameterExpr(std::unique_ptr<Expr>& value)
       : value(std::move(value)), named(false), name(nullptr) {
-        this->kind = ExprKind::Parameter;
-      }
+    this->kind = ExprKind::Parameter;
+  }
 
   void accept(Visitor& visitor);
 };
@@ -105,8 +103,8 @@ class FunctionExpr : public Expr {
   FunctionExpr(std::string name,
                std::vector<std::unique_ptr<ParameterExpr>>& arguments)
       : name(name), arguments(std::move(arguments)) {
-        this->kind = ExprKind::Function;
-      }
+    this->kind = ExprKind::Function;
+  }
 
   void accept(Visitor& visitor);
 };

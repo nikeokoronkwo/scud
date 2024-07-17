@@ -1,8 +1,8 @@
 #include "src/api/project.h"
 
 #include <algorithm>
-#include <string>
 #include <map>
+#include <string>
 #include <vector>
 
 namespace scud::api {

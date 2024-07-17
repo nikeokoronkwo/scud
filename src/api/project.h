@@ -1,8 +1,8 @@
 #ifndef SCUD_SRC_API_PROJECT_H
 #define SCUD_SRC_API_PROJECT_H
 
-#include <vector>
 #include <map>
+#include <vector>
 
 #include "src/api/base/base.h"
 
